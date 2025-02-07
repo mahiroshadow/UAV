@@ -98,11 +98,11 @@
 
           <div class="box mapbox" style="overflow: hidden; position: relative">
             <div class="maptab">
-              <a href="https://gitee.com/iGaoWei/big-data-view" class="active">地图</a>
-              <a href="https://gitee.com/iGaoWei/big-data-view">视频</a>
+              <!-- <a href="https://gitee.com/iGaoWei/big-data-view" class="active">地图</a> -->
+              <a href="#">视频</a>
             </div>
 
-            <div class="boxnav" id="map" style="height: 100%"></div>
+            <!-- <div class="boxnav" id="map" style="height: 100%"></div> -->
 
             <div class="map_tool_outbox">
               <span class="map_tool">
@@ -207,7 +207,14 @@
               </span>
             </div>
 
-            <div class="videobox">
+            <div class="boxnav">
+              <video
+                style="width: 100%; height: 100%"
+                src="../assets/video/test.mp4"
+                autoplay
+                controls
+                loop
+              ></video>
               <!-- <ul class="clearfix">
               <li>
                 <video
@@ -256,11 +263,11 @@
           <div>
             <div class="box" style="float: left; width: 49.5%; padding: 0 15px">
               <div class="tit"><span>男女比例</span></div>
-              <div id="echart1" style="height: 300px"></div>
+              <div ref="echart1" style="height: 300px"></div>
             </div>
             <div class="box" style="float: right; width: 49.5%; padding: 0 15px">
               <div class="tit"><span>各年龄段比例</span></div>
-              <div id="echart2" style="height: 300px"></div>
+              <div ref="echart2" style="height: 300px"></div>
             </div>
           </div>
         </li>
@@ -341,7 +348,7 @@
           </div>
           <div class="box">
             <div class="tit"><span>到访次数</span></div>
-            <div class="boxnav" id="echart3" style="height: 300px"></div>
+            <div class="boxnav" ref="echart3" style="height: 300px"></div>
           </div>
         </li>
       </ul>
@@ -349,21 +356,31 @@
   </div>
 </template>
 
-<script lang="ts">
-import { onMounted, ref } from 'vue'
-
+<script lang="ts" setup>
+import { onMounted, ref, nextTick } from 'vue'
+import { chartInit } from '@/hooks/useCharts'
+import { pieOption, pieOption2, barOption } from '@/hooks/chartsOption'
 const show = ref<boolean>(false)
+const echart1 = ref<HTMLDivElement | null>()
+const echart2 = ref<HTMLDivElement | null>()
+const echart3 = ref<HTMLDivElement | null>()
 
 const imageList = ref<Record<'path' | 'name', string>[]>([
-  { path: '../assets/images/face1.png', name: '姜文' },
-  { path: '../assets/images/face2.png', name: '刘德华' },
-  { path: '../assets/images/face3.png', name: '周星驰' },
-  { path: '../assets/images/face1.png', name: '姜文' },
-  { path: '../assets/images/face2.png', name: '刘德华' },
-  { path: '../assets/images/face3.png', name: '周星驰' },
+  { path: 'src/assets/images/face1.png', name: '姜文' },
+  { path: 'src/assets/images/face2.png', name: '刘德华' },
+  { path: 'src/assets/images/face3.png', name: '周星驰' },
+  { path: 'src/assets/images/face1.png', name: '姜文' },
+  { path: 'src/assets/images/face2.png', name: '刘德华' },
+  { path: 'src/assets/images/face3.png', name: '周星驰' },
 ])
 
-onMounted(() => {})
+onMounted(() => {
+  // await nextTick()
+  const charts1 = chartInit(echart1.value!, pieOption)
+  const charts2 = chartInit(echart2.value!, pieOption2)
+  const charts3 = chartInit(echart3.value!, barOption)
+  // console.log(charts1)
+})
 </script>
 
 <style scoped lang="scss">

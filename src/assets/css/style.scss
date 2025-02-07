@@ -21,7 +21,7 @@
 
 .all-container {
   // width: 100vw;
-  height: 100%;
+  height: 100vh;
   // min-height: 100%;
 }
 li {
@@ -110,7 +110,7 @@ i {
 }
 
 .box {
-  min-height: 16rem;
+  min-height: 20rem;
   border: 2px solid #005ce8;
   box-shadow: inset 0 0 10px rgba(7, 118, 181, 0.4);
   margin-bottom: 12px;
@@ -133,6 +133,7 @@ i {
 }
 
 .boxnav {
+  height: 20rem;
   padding: 10px;
 }
 
