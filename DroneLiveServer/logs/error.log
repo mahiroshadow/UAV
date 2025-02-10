@@ -1,0 +1,29 @@
+2024/09/12 14:59:10 [emerg] 6196#6392: CreateFile() "F:\Drone Live Serves/conf/nginx.conf" failed (2: The system cannot find the file specified)
+2024/09/12 19:30:07 [emerg] 7436#5260: CreateFile() "G:\Drone Live Serves/conf/nginx.conf" failed (2: The system cannot find the file specified)
+2024/09/15 10:33:25 [notice] 7656#14868: sockinit() attempting to access sockapi
+2024/09/15 10:33:25 [notice] 7656#14868: Access to sockapi succeded!
+2024/09/15 10:33:25 [notice] 7656#14868: using sockapi from "4;100;"
+2024/09/15 10:33:25 [notice] 5316#336: sockinit() attempting to access sockapi
+2024/09/15 10:33:25 [notice] 5316#336: Access to sockapi succeded!
+2024/09/15 10:33:25 [notice] 5316#336: using sockapi from "4;8;"
+2024/09/15 10:46:59 [notice] 17836#17916: sockinit() attempting to access sockapi
+2024/09/15 10:46:59 [notice] 17836#17916: Access to sockapi succeded!
+2024/09/15 10:46:59 [notice] 17836#17916: using sockapi from "4;92;"
+2024/09/15 10:46:59 [notice] 11392#11396: sockinit() attempting to access sockapi
+2024/09/15 10:46:59 [notice] 11392#11396: Access to sockapi succeded!
+2024/09/15 10:46:59 [notice] 11392#11396: using sockapi from "4;8;"
+2024/09/15 10:52:13 [error] 17836#16452: *2 live: already publishing, client: 192.168.31.29, server: 0.0.0.0:1935
+2025/02/09 23:20:41 [notice] 31748#33764: sockinit() attempting to access sockapi
+2025/02/09 23:20:41 [notice] 31748#33764: Access to sockapi succeded!
+2025/02/09 23:20:41 [notice] 31748#33764: using sockapi from "4;160;"
+2025/02/09 23:20:42 [notice] 24728#28388: sockinit() attempting to access sockapi
+2025/02/09 23:20:42 [notice] 24728#28388: Access to sockapi succeded!
+2025/02/09 23:20:42 [notice] 24728#28388: using sockapi from "4;8;"
+2025/02/10 09:54:57 [notice] 15736#20776: sockinit() attempting to access sockapi
+2025/02/10 09:54:57 [notice] 15736#20776: Access to sockapi succeded!
+2025/02/10 09:54:57 [notice] 15736#20776: using sockapi from "4;164;"
+2025/02/10 09:54:57 [notice] 18500#6200: sockinit() attempting to access sockapi
+2025/02/10 09:54:57 [notice] 18500#6200: Access to sockapi succeded!
+2025/02/10 09:54:57 [notice] 18500#6200: using sockapi from "4;8;"
+2025/02/10 18:16:51 [notice] 24292#26524: Fatal: wait for sockapi failed
+2025/02/10 18:16:54 [notice] 5012#29396: Fatal: wait for sockapi failed
