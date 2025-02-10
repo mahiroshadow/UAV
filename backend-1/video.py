@@ -16,6 +16,6 @@ cap = cv2.VideoCapture(src)
 pipe = subprocess.Popen(command, shell=False, stdin=subprocess.PIPE)
 while True:
     _, frame = cap.read()
-    res = model(frame)
-    pipe.stdin.write(frame)
+    res = model(frame)[0]
+    pipe.stdin.write(res.mask)
     cv2.waitKey(1)
