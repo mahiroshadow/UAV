@@ -7,9 +7,14 @@ import vueDevTools from 'vite-plugin-vue-devtools'
 import Components from 'unplugin-vue-components/vite'
 import { AntDesignVueResolver } from 'unplugin-vue-components/resolvers'
 
+import electron from 'vite-plugin-electron'
+
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [
+    // electron({
+    //   entry: 'electron/index.ts',
+    // }),
     vue(),
     vueJsx(),
     vueDevTools(),

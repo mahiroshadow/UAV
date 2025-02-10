@@ -209,11 +209,13 @@
 
             <div class="boxnav">
               <video
+                id="vid-eobo"
+                ref="videoRef"
                 style="width: 100%; height: 100%"
-                src="../assets/video/test.mp4"
+                class="vjs-default-skin video-js"
                 autoplay
                 controls
-                loop
+                preload="auto"
               ></video>
               <!-- <ul class="clearfix">
               <li>
@@ -360,7 +362,12 @@
 import { onMounted, ref, nextTick } from 'vue'
 import { chartInit } from '@/hooks/useCharts'
 import { pieOption, pieOption2, barOption } from '@/hooks/chartsOption'
+//@ts-ignore
+import flvjs from 'flv.js'
+
+const flvPlayer = ref<any>(null)
 const show = ref<boolean>(false)
+const videoRef = ref<HTMLVideoElement | null>()
 const echart1 = ref<HTMLDivElement | null>()
 const echart2 = ref<HTMLDivElement | null>()
 const echart3 = ref<HTMLDivElement | null>()
@@ -374,11 +381,35 @@ const imageList = ref<Record<'path' | 'name', string>[]>([
   { path: 'src/assets/images/face3.png', name: '周星驰' },
 ])
 
+const createVideo = () => {
+  if (flvjs.isSupported()) {
+    // var videoElement = document.getElementById('videoElement')
+    flvPlayer.value = flvjs.createPlayer({
+      type: 'flv',
+      url: 'http://47.98.33.192:8081/live?port=1935&app=live&stream=test', //你的url地址
+      isLive: true,
+      hasAudio: false,
+    })
+    flvPlayer.value.attachMediaElement(videoRef.value!)
+    flvPlayer.value.load()
+
+    setTimeout(function () {
+      flvPlayer.value.play()
+    }, 300)
+    //处理视频播放错误的语法
+    flvPlayer.value.on('error', () => {
+      // message.error(`视频加载失败，请稍候重试！`);
+      return false
+    })
+  }
+}
+
 onMounted(() => {
   // await nextTick()
   const charts1 = chartInit(echart1.value!, pieOption)
   const charts2 = chartInit(echart2.value!, pieOption2)
   const charts3 = chartInit(echart3.value!, barOption)
+  createVideo()
   // console.log(charts1)
 })
 </script>
