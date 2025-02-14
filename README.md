@@ -35,4 +35,10 @@ ffmpeg -re -i rtmp://192.168.5.5:1935/live/stream -vcodec libx264 -preset:v ultr
 ffmpeg -re -i rtmp://192.168.5.5:1935/live/home -vcodec libx264 -preset:v ultrafast -tune:v zerolatency -acodec copy -f flv rtmp://47.98.33.192:1935/live/test
 ```
 
+# flv公网地址
+
+```shell
+http://47.98.33.192:8081/live?port=1935&app=live&stream=test
+```
+
 ![](./src/assets/images/test.png)

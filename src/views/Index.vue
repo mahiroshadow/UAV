@@ -21,7 +21,7 @@
           </div>
           <div class="box">
             <div class="tit"><span>在岗工作人员</span></div>
-            <div class="boxnav" style="height: 300px">
+            <div class="boxnav" style="height: 24.6rem">
               <table class="table1" width="100%" border="0" cellspacing="0" cellpadding="0">
                 <tbody>
                   <tr>
@@ -91,19 +91,15 @@
             <ul>
               <li>对比次时昨日累计：<span>N/A</span>人</li>
               <li>同比增长：<span>N/A%</span></li>
-              <li>安装设备：<span>N/A</span></li>
-              <li>在线设备：<span>N/A</span></li>
+              <li>安装设备：<span>1</span></li>
+              <li>在线设备：<span>1</span></li>
             </ul>
           </div>
 
           <div class="box mapbox" style="overflow: hidden; position: relative">
             <div class="maptab">
-              <!-- <a href="https://gitee.com/iGaoWei/big-data-view" class="active">地图</a> -->
               <a href="#">视频</a>
             </div>
-
-            <!-- <div class="boxnav" id="map" style="height: 100%"></div> -->
-
             <div class="map_tool_outbox">
               <span class="map_tool">
                 <a
@@ -217,51 +213,8 @@
                 controls
                 preload="auto"
               ></video>
-              <!-- <ul class="clearfix">
-              <li>
-                <video
-                  poster="images/face1.png"
-                  src="http://www.17sucai.com/preview/1424582/2018-10-31/video/ckin.mp4
-"
-                  data-ckin="default"
-                  data-overlay="1"
-                  data-title="视频标题"
-                ></video>
-              </li>
-              <li>
-                <video
-                  poster="images/face3.png"
-                  src="http://www.17sucai.com/preview/1424582/2018-10-31/video/ckin.mp4
-"
-                  data-ckin="default"
-                  data-overlay="1"
-                  data-title="视频标题"
-                ></video>
-              </li>
-              <li>
-                <video
-                  poster="images/face2.png"
-                  src="http://www.17sucai.com/preview/1424582/2018-10-31/video/ckin.mp4
-"
-                  data-ckin="default"
-                  data-overlay="1"
-                  data-title="视频标题"
-                ></video>
-              </li>
-              <li>
-                <video
-                  poster="images/head.jpg"
-                  src="http://www.17sucai.com/preview/1424582/2018-10-31/video/ckin.mp4
-"
-                  data-ckin="default"
-                  data-overlay="1"
-                  data-title="视频标题"
-                ></video>
-              </li>
-            </ul> -->
             </div>
           </div>
-
           <div>
             <div class="box" style="float: left; width: 49.5%; padding: 0 15px">
               <div class="tit"><span>男女比例</span></div>
@@ -278,79 +231,21 @@
             <div class="tit"><span>目标人脸识别</span></div>
             <div class="boxnav">
               <div class="scolldiv scolldiv2">
-                <!-- <ul class="face02 clearfix">
-                <li>
-                  <div class="facedb">
-                    <div><img src="images/face1.png" /></div>
-                    <div><img src="images/face1.png" /></div>
-                    <span>100%</span>
-                  </div>
-                  <p>姜文/A区正门</p>
-                </li>
-                <li>
-                  <div class="facedb">
-                    <div><img src="images/face1.png" /></div>
-                    <div><img src="images/face1.png" /></div>
-                    <span>100%</span>
-                  </div>
-                  <p>姜文/A区正门</p>
-                </li>
-                <li>
-                  <div class="facedb">
-                    <div><img src="images/face2.png" /></div>
-                    <div><img src="images/face3.png" /></div>
-                    <span>0%</span>
-                  </div>
-                  <p>姜文/A区正门</p>
-                </li>
-
-                <li>
-                  <div class="facedb">
-                    <div><img src="images/face1.png" /></div>
-                    <div><img src="images/face2.png" /></div>
-                    <span>99%</span>
-                  </div>
-                  <p>姜文/A区正门</p>
-                </li>
-                <li>
-                  <div class="facedb">
-                    <div><img src="images/face2.png" /></div>
-                    <div><img src="images/face3.png" /></div>
-                    <span>99%</span>
-                  </div>
-                  <p>姜文/A区正门</p>
-                </li>
-                <li>
-                  <div class="facedb">
-                    <div><img src="images/face2.png" /></div>
-                    <div><img src="images/face1.png" /></div>
-                    <span>99%</span>
-                  </div>
-                  <p>姜文/A区正门</p>
-                </li>
-                <li>
-                  <div class="facedb">
-                    <div><img src="images/face1.png" /></div>
-                    <div><img src="images/face2.png" /></div>
-                    <span>99%</span>
-                  </div>
-                  <p>姜文/A区正门</p>
-                </li>
-                <li>
-                  <div class="facedb">
-                    <div><img src="images/face1.png" /></div>
-                    <div><img src="images/face2.png" /></div>
-                    <span>99%</span>
-                  </div>
-                  <p>姜文/A区正门</p>
-                </li>
-              </ul> -->
+                <Vue3SeamlessScroll :list="detectList" :step="step" class="scroll-container">
+                  <ul class="scroll-list">
+                    <li v-for="item in detectList">
+                      <div>{{ item.name }}</div>
+                      <div>{{ item.confidence }}</div>
+                      <div>{{ item.position }}</div>
+                    </li>
+                  </ul>
+                </Vue3SeamlessScroll>
               </div>
             </div>
           </div>
           <div class="box">
             <div class="tit"><span>到访次数</span></div>
-            <div class="boxnav" ref="echart3" style="height: 300px"></div>
+            <div class="boxnav" ref="echart3" style="height: 24.6rem"></div>
           </div>
         </li>
       </ul>
@@ -359,18 +254,35 @@
 </template>
 
 <script lang="ts" setup>
-import { onMounted, ref, nextTick } from 'vue'
+import { onMounted, ref, nextTick, computed } from 'vue'
 import { chartInit } from '@/hooks/useCharts'
 import { pieOption, pieOption2, barOption } from '@/hooks/chartsOption'
+import { Vue3SeamlessScroll } from 'vue3-seamless-scroll'
 //@ts-ignore
 import flvjs from 'flv.js'
 
+const step = ref<number>(0.8)
 const flvPlayer = ref<any>(null)
 const show = ref<boolean>(false)
 const videoRef = ref<HTMLVideoElement | null>()
 const echart1 = ref<HTMLDivElement | null>()
 const echart2 = ref<HTMLDivElement | null>()
 const echart3 = ref<HTMLDivElement | null>()
+
+const detectList = ref<Record<'name' | 'confidence' | 'position', string>[]>([
+  { name: '行人', confidence: '0.76', position: '' },
+  { name: '行人', confidence: '0.64', position: '' },
+  { name: '行人', confidence: '0.32', position: '' },
+  { name: '行人', confidence: '0.89', position: '' },
+  { name: '行人', confidence: '0.76', position: '' },
+  { name: '行人', confidence: '0.64', position: '' },
+  { name: '行人', confidence: '0.32', position: '' },
+  { name: '行人', confidence: '0.89', position: '' },
+  { name: '行人', confidence: '0.76', position: '' },
+  { name: '行人', confidence: '0.64', position: '' },
+  { name: '行人', confidence: '0.32', position: '' },
+  { name: '行人', confidence: '0.89', position: '' },
+])
 
 const imageList = ref<Record<'path' | 'name', string>[]>([
   { path: 'src/assets/images/face1.png', name: '姜文' },
@@ -383,10 +295,9 @@ const imageList = ref<Record<'path' | 'name', string>[]>([
 
 const createVideo = () => {
   if (flvjs.isSupported()) {
-    // var videoElement = document.getElementById('videoElement')
     flvPlayer.value = flvjs.createPlayer({
       type: 'flv',
-      url: 'http://47.98.33.192:8081/live?port=1935&app=live&stream=test', //你的url地址
+      url: 'http://47.98.33.192:8081/live?port=1935&app=live&stream=test',
       isLive: true,
       hasAudio: false,
     })
@@ -396,25 +307,39 @@ const createVideo = () => {
     setTimeout(function () {
       flvPlayer.value.play()
     }, 300)
-    //处理视频播放错误的语法
     flvPlayer.value.on('error', () => {
-      // message.error(`视频加载失败，请稍候重试！`);
       return false
     })
   }
 }
 
 onMounted(() => {
-  // await nextTick()
   const charts1 = chartInit(echart1.value!, pieOption)
   const charts2 = chartInit(echart2.value!, pieOption2)
   const charts3 = chartInit(echart3.value!, barOption)
   createVideo()
-  // console.log(charts1)
 })
 </script>
 
 <style scoped lang="scss">
 @import url('../assets/css/ckin.scss');
 @import url('../assets/css/style.scss');
+.scroll-container {
+  width: 100%;
+  height: 100%;
+  .scroll-list {
+    list-style: none;
+    li {
+      margin-top: 0.5rem;
+      display: flex;
+      div {
+        width: 33.3%;
+        text-align: center;
+        &:nth-child(2) {
+          font-family: electronicFont;
+        }
+      }
+    }
+  }
+}
 </style>

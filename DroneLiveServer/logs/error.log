@@ -27,3 +27,9 @@
 2025/02/10 09:54:57 [notice] 18500#6200: using sockapi from "4;8;"
 2025/02/10 18:16:51 [notice] 24292#26524: Fatal: wait for sockapi failed
 2025/02/10 18:16:54 [notice] 5012#29396: Fatal: wait for sockapi failed
+2025/02/13 09:43:10 [notice] 16884#17648: sockinit() attempting to access sockapi
+2025/02/13 09:43:10 [notice] 16884#17648: Access to sockapi succeded!
+2025/02/13 09:43:10 [notice] 16884#17648: using sockapi from "4;84;"
+2025/02/13 09:43:10 [notice] 21828#13340: sockinit() attempting to access sockapi
+2025/02/13 09:43:10 [notice] 21828#13340: Access to sockapi succeded!
+2025/02/13 09:43:10 [notice] 21828#13340: using sockapi from "4;8;"
